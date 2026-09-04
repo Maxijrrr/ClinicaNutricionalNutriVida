@@ -1,0 +1,73 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const formCita = document.getElementById('formCita');
+
+    if (formCita) {
+        formCita.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Obtener los valores ingresados por el paciente
+            const nombre = document.getElementById('nombre').value;
+            const servicioSelect = document.getElementById('servicio');
+            const servicioTexto = servicioSelect.options[servicioSelect.selectedIndex].text;
+            const nutricionistaSelect = document.getElementById('nutricionista');
+            const nutricionistaTexto = nutricionistaSelect.options[nutricionistaSelect.selectedIndex].text;
+            const fecha = document.getElementById('fecha').value;
+
+            // Validar que se haya seleccionado un servicio
+            if (!servicioSelect.value) {
+                alert('Por favor, selecciona un servicio o consulta.');
+                return;
+            }
+
+            // Simulación de envío exitoso / Solicitud registrada
+            alert(`¡Solicitud de cita recibida con éxito!\n\n` +
+                  `Paciente: ${nombre}\n` +
+                  `Servicio: ${servicioTexto}\n` +
+                  `Especialista: ${nutricionistaTexto}\n` +
+                  `Fecha solicitada: ${fecha}\n\n` +
+                  `Estado: Pendiente de confirmación por la secretaria.`);
+
+            // Limpiar el formulario tras enviar
+            formCita.reset();
+        });
+    }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // =============================================================
+    // 1. HORARIOS DE ATENCIÓN POR NUTRICIONISTA
+    // =============================================================
+    const horarios = {
+        camila: ["09:00", "10:00", "11:00", "12:00"],
+        mateo: ["14:00", "15:00", "16:00", "17:00"],
+        elena: ["09:00", "11:00", "15:00", "16:00"],
+        nicolas: ["10:00", "12:00", "14:00", "17:00"]
+    };
+
+    const nutricionistaSelect = document.getElementById('nutricionista');
+    const horaSelect = document.getElementById('hora');
+    const formCita = document.getElementById('formCita');
+
+    // =============================================================
+    // 2. FILTRO DINÁMICO DE HORAS AL CAMBIAR DE NUTRICIONISTA
+    // =============================================================
+    if (nutricionistaSelect && horaSelect) {
+        nutricionistaSelect.addEventListener('change', (e) => {
+            const horasDisponibles = horarios[e.target.value];
+
+            // Limpiar opciones anteriores del desplegable
+            horaSelect.innerHTML = '<option value="" disabled selected>-- Selecciona una hora --</option>';
+
+            // Cargar las horas correspondientes al especialista
+            if (horasDisponibles) {
+                horasDisponibles.forEach(hora => {
+                    const option = document.createElement('option');
+                    option.value = hora;
+                    option.textContent = `${hora} hrs`;
+                    horaSelect.appendChild(option);
+                });
+                horaSelect.disabled = false; // Habilita el menú de horas
+            }
+        });
+    }
+});

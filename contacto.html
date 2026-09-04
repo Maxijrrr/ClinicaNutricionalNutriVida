@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y citas | Clínica Nutricional NutriVida</title>
+    <title>Contacto y Citas | Clínica Nutricional NutriVida</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/funciones.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
 </head>
 <body>
+
     <header>
         <h1>Clínica Nutricional NutriVida</h1>
         <nav>
@@ -23,11 +23,113 @@
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main class="contenedor-contacto">
+        
+        <section class="seccion-form">
+            <h2>Agendar Cita Nutricional</h2>
+            <p class="bajada">Completa tus datos para solicitar una hora con nuestro equipo.</p>
+
+            <form id="formCita" action="#" method="POST">
+                
+                <!-- Datos personales -->
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" required>
+                </div>
+
+                <div class="campo">
+                    <label for="rut">RUT</label>
+                    <input type="text" id="rut" name="rut" placeholder="Ej: 12.345.678-9" required>
+                </div>
+
+                <div class="campo-doble">
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required>
+                    </div>
+                </div>
+
+                <!-- Seleccion de atencion -->
+                <div class="campo">
+                    <label for="nutricionista">Nutricionista</label>
+                    <select id="nutricionista" name="nutricionista" required>
+                        <option value="" disabled selected>-- Selecciona un especialista --</option>
+                        <option value="carolina">Nut. Carolina Fuentes M. (Obesidad)</option>
+                        <option value="rodrigo">Nut. Rodrigo Sepúlveda A. (Deportiva)</option>
+                        <option value="daniela">Nut. Daniela Morales C. (Vegetariana/Vegana)</option>
+                        <option value="felipe">Nut. Felipe Araya R. (Pediátrica)</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="servicio">Tipo de servicio</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="" disabled selected>-- Selecciona un servicio --</option>
+                        <option value="consulta">Primera Consulta Nutricional</option>
+                        <option value="control">Control Nutricional (Seguimiento)</option>
+                        <option value="plan">Plan Especializado</option>
+                        <option value="evaluacion">Evaluación Antropométrica</option>
+                        <option value="taller">Taller Grupal</option>
+                    </select>
+                </div>
+
+                <div class="campo-doble">
+                    <div class="campo">
+                        <label for="fecha">Fecha de la cita</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="campo">
+                        <label for="hora">Hora disponible</label>
+                        <select id="hora" name="hora" required disabled>
+                            <option value="" disabled selected>-- Primero selecciona un nutricionista --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="motivo">Motivo de consulta (opcional)</label>
+                    <textarea id="motivo" name="motivo" rows="3" placeholder="Cuéntanos brevemente tu objetivo o antecedentes..."></textarea>
+                </div>
+
+                <button type="submit" class="boton boton-submit">Agendar Cita</button>
+            </form>
+        </section>
+
+        <!-- Informacion de la clinica -->
+        <section class="seccion-info">
+            <h2>Nuestra Ubicación</h2>
+            <p>Atendemos de forma presencial en Temuco y online para todo Chile.</p>
+
+            <div class="info-cajas">
+                <article class="caja-info">
+                    <h3>Dirección</h3>
+                    <p>Av. Alemania 0281, Temuco, Región de La Araucanía</p>
+                </article>
+
+                <article class="caja-info">
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes a Viernes: 08:00 – 19:00 hrs</p>
+                    <p>Sábados: 09:00 – 14:00 hrs</p>
+                </article>
+
+                <article class="caja-info">
+                    <h3>Contacto Directo</h3>
+                    <p>Teléfono: +56 45 220 0000</p>
+                    <p>WhatsApp: +56 9 8765 4321</p>
+                </article>
+            </div>
+        </section>
 
     </main>
+
     <footer>
         <p>&copy; 2026 Clínica Nutricional NutriVida. Temuco, Chile.</p>
     </footer>
+
 </body>
 </html>
