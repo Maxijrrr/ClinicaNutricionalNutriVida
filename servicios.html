@@ -21,48 +21,174 @@
                 <li><a href="contacto.html">Agendar Cita</a></li>
             </ul>
         </nav>
-
     </header>
+
     <main>
+        <!-- SECCIÓN 1: SERVICIOS Y PLANES CON PESTAÑAS -->
         <section class="seccion-servicios">
             <h2>Nuestros Servicios y Planes</h2>
-            <div class="grilla-servicios">
+            <p style="margin-bottom: 20px; color: #4b5563;">Selecciona una categoría para explorar todas las opciones disponibles y agendar tu atención:</p>
 
-                <article class="tarjeta-servicio">
-                    <h3>Primera Consulta Nutricional</h3>
-                    <p class="servicio-meta">Presencial | 50 min</p>
-                    <p class="servicio-desc">Evaluación inicial: anamnesis, antropometría completa y diseño del primer plan alimenticio.</p>
-                    <p class="servicio-precio">$35.000 CLP</p>
-                    <a href="contacto.html" class="boton">Solicitar Cita</a>
-                </article>
+            <!-- Botones de Categorías -->
+            <div class="tabs-categorias">
+                <button class="tab-btn activo" onclick="cambiarCategoria('consultas')">Consultas</button>
+                <button class="tab-btn" onclick="cambiarCategoria('planes')">Planes Especializados</button>
+                <button class="tab-btn" onclick="cambiarCategoria('evaluaciones')">Evaluaciones</button>
+                <button class="tab-btn" onclick="cambiarCategoria('talleres')">Talleres Grupales</button>
+            </div>
 
-                <article class="tarjeta-servicio">
-                    <h3>Control Nutricional (Seguimiento)</h3>
-                    <p class="servicio-meta">Presencial | 30 min</p>
-                    <p class="servicio-desc">Seguimiento mensual: medición de indicadores y ajuste del plan vigente.</p>
-                    <p class="servicio-precio">$25.000 CLP</p>
-                    <a href="contacto.html" class="boton">Solicitar Cita</a>
-                </article>
+            <!-- Panel 1: Consultas -->
+            <div id="panel-consultas" class="panel-categoria activo">
+                <div class="grilla-servicios">
+                    <article class="tarjeta-servicio">
+                        <h3>Primera Consulta Nutricional</h3>
+                        <p class="servicio-meta">Presencial | 50 min</p>
+                        <p class="servicio-desc">Evaluación inicial: anamnesis, antropometría completa y diseño del primer plan alimenticio.</p>
+                        <p class="servicio-precio">$35.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Control Nutricional (Seguimiento)</h3>
+                        <p class="servicio-meta">Presencial | 30 min</p>
+                        <p class="servicio-desc">Seguimiento mensual: medición de indicadores y ajuste del plan vigente.</p>
+                        <p class="servicio-precio">$25.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Control Nutricional Quincenal</h3>
+                        <p class="servicio-meta">Presencial | 30 min</p>
+                        <p class="servicio-desc">Seguimiento intensivo cada 15 días. Recomendado en los primeros 2 meses.</p>
+                        <p class="servicio-precio">$22.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Teleconsulta Nutricional</h3>
+                        <p class="servicio-meta">Online (video) | 30 min</p>
+                        <p class="servicio-desc">Consulta de seguimiento vía videollamada. Requiere contar con consulta presencial previa.</p>
+                        <p class="servicio-precio">$20.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Consulta de Urgencia / Reagendada</h3>
+                        <p class="servicio-meta">Presencial | 30 min</p>
+                        <p class="servicio-desc">Para pacientes que requieren atención fuera de su control habitual.</p>
+                        <p class="servicio-precio">$28.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                </div>
+            </div>
 
-                <article class="tarjeta-servicio">
-                    <h3>Plan Pérdida de Peso (1 mes)</h3>
-                    <p class="servicio-meta">Programa Presencial</p>
-                    <p class="servicio-desc">Incluye primera consulta + 1 control quincenal + plan alimenticio personalizado + seguimiento por WhatsApp.</p>
-                    <p class="servicio-precio">$65.000 CLP</p>
-                    <a href="contacto.html" class="boton">Solicitar Cita</a>
-                </article>
+            <!-- Panel 2: Planes Especializados -->
+            <div id="panel-planes" class="panel-categoria">
+                <div class="grilla-servicios">
+                    <article class="tarjeta-servicio">
+                        <h3>Plan Pérdida de Peso (1 mes)</h3>
+                        <p class="servicio-meta">Presencial | Programa</p>
+                        <p class="servicio-desc">Incluye primera consulta + 1 control quincenal + plan personalizado + seguimiento por WhatsApp.</p>
+                        <p class="servicio-precio">$65.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Plan Pérdida de Peso (3 meses)</h3>
+                        <p class="servicio-meta">Presencial | Programa</p>
+                        <p class="servicio-desc">Incluye primera consulta + 5 controles + 3 planes mensuales + seguimiento continuo.</p>
+                        <p class="servicio-precio">$170.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Plan Nutrición Deportiva (1 mes)</h3>
+                        <p class="servicio-meta">Presencial | Programa Especializado</p>
+                        <p class="servicio-desc">Para deportistas y personas con actividad frecuente. Cálculo calórico y de macronutrientes.</p>
+                        <p class="servicio-precio">$70.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Plan Control Diabetes / Hipertensión</h3>
+                        <p class="servicio-meta">Presencial | Patologías Metabólicas</p>
+                        <p class="servicio-desc">Plan adaptado para patologías metabólicas. Coordinación con médico tratante si aplica.</p>
+                        <p class="servicio-precio">$75.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Plan Alimentación Vegetariana/Vegana</h3>
+                        <p class="servicio-meta">Presencial | Especializado</p>
+                        <p class="servicio-desc">Garantiza aporte adecuado de proteínas, hierro, vitamina B12 y calcio sin productos animales.</p>
+                        <p class="servicio-precio">$68.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Plan Alimentación Infantil (2-12 años)</h3>
+                        <p class="servicio-meta">Presencial | Pediátrico</p>
+                        <p class="servicio-desc">Evaluación nutricional pediátrica y diseño de plan adaptado a la etapa de desarrollo infantil.</p>
+                        <p class="servicio-precio">$65.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                </div>
+            </div>
 
-                <article class="tarjeta-servicio">
-                    <h3>Plan Nutrición Deportiva (1 mes)</h3>
-                    <p class="servicio-meta">Programa Especializado | Presencial</p>
-                    <p class="servicio-desc">Para deportistas y personas con actividad física frecuente. Cálculo de requerimientos energéticos y proteicos.</p>
-                    <p class="servicio-precio">$70.000 CLP</p>
-                    <a href="contacto.html" class="boton">Solicitar Cita</a>
-                </article>
+            <!-- Panel 3: Evaluaciones -->
+            <div id="panel-evaluaciones" class="panel-categoria">
+                <div class="grilla-servicios">
+                    <article class="tarjeta-servicio">
+                        <h3>Antropometría Completa</h3>
+                        <p class="servicio-meta">Presencial | 20 min</p>
+                        <p class="servicio-desc">Peso, talla, IMC, pliegues, circunferencias y grasa corporal con bioimpedanciometría.</p>
+                        <p class="servicio-precio">$18.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Bioimpedanciometría</h3>
+                        <p class="servicio-meta">Presencial | 15 min</p>
+                        <p class="servicio-desc">Composición corporal: masa grasa, masa muscular, agua corporal total y edad metabólica.</p>
+                        <p class="servicio-precio">$12.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Encuesta de Hábitos Alimentarios</h3>
+                        <p class="servicio-meta">Presencial | 20 min</p>
+                        <p class="servicio-desc">Análisis del patrón alimentario actual. Identificación de déficit y excesos nutricionales.</p>
+                        <p class="servicio-precio">$10.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Análisis de Exámenes de Laboratorio</h3>
+                        <p class="servicio-meta">Presencial | 20 min</p>
+                        <p class="servicio-desc">Interpretación de hemograma, perfil bioquímico y lipídico en contexto nutricional.</p>
+                        <p class="servicio-precio">$15.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                </div>
+            </div>
 
+            <!-- Panel 4: Talleres Grupales -->
+            <div id="panel-talleres" class="panel-categoria">
+                <div class="grilla-servicios">
+                    <article class="tarjeta-servicio">
+                        <h3>Taller de Alimentación Saludable</h3>
+                        <p class="servicio-meta">Presencial grupal | 90 min (Máx 10)</p>
+                        <p class="servicio-desc">Conceptos básicos de alimentación equilibrada, porciones y lectura de etiquetado nutricional.</p>
+                        <p class="servicio-precio">$15.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Taller de Cocina Nutritiva</h3>
+                        <p class="servicio-meta">Presencial grupal | 120 min (Máx 8)</p>
+                        <p class="servicio-desc">Preparación guiada de recetas equilibradas paso a paso. Incluye degustación final.</p>
+                        <p class="servicio-precio">$20.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                    <article class="tarjeta-servicio">
+                        <h3>Taller Nutrición para Deportistas</h3>
+                        <p class="servicio-meta">Presencial grupal | 90 min (Máx 12)</p>
+                        <p class="servicio-desc">Pautas de hidratación, comidas pre y post entrenamiento y suplementación básica.</p>
+                        <p class="servicio-precio">$18.000 CLP</p>
+                        <a href="contacto.html" class="boton">Solicitar Cita</a>
+                    </article>
+                </div>
             </div>
         </section>
 
+        <!-- SECCIÓN 2: EQUIPO DE NUTRICIONISTAS (OFICIAL FORMA D) -->
         <section class="seccion-equipo">
             <h2>Equipo de Nutricionistas</h2>
             <div class="contenedor-tabla">
@@ -83,38 +209,32 @@
                             <td>Lunes, Miércoles, Viernes</td>
                             <td>09:00 – 17:00 hrs</td>
                         </tr>
-
                         <tr>
                             <td>Nut. Rodrigo Sepúlveda A.</td>
                             <td>Nutrición deportiva y rendimiento</td>
                             <td>Martes, Jueves, Sábado</td>
                             <td>09:00 – 14:00 hrs</td>
                         </tr>
-
                         <tr>
                             <td>Nut. Daniela Morales C.</td>
                             <td>Alimentación vegetariana, vegana y trastornos alimentarios</td>
                             <td>Lunes a Viernes</td>
                             <td>08:00 – 13:00 hrs</td>
                         </tr>
-
                         <tr>
                             <td>Nut. Felipe Araya R.</td>
                             <td>Nutrición pediátrica y familiar</td>
                             <td>Martes a Viernes</td>
-                        <td>14:00 – 19:00 hrs</td>
+                            <td>14:00 – 19:00 hrs</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Clínica Nutricional NutriVida. Temuco, Chile.</p>
-
     </footer>
-    
 </body>
 </html>
