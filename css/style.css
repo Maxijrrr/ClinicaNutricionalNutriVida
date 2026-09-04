@@ -475,3 +475,63 @@ tbody tr:hover {
     gap: 0;
   }
 }
+/* SERVICIOS DESTACADOS DEL INICIO */
+
+.servicios-destacados {
+  margin-bottom: 48px;
+}
+
+.servicios-destacados h2 {
+  color: #0ea82f;
+  margin-bottom: 10px;
+}
+
+.introduccion-servicios {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.grilla-destacados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.tarjeta-destacada {
+  background-color: #ffffff;
+  border: 1px solid #d1e7dd;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-destacada h3 {
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.tarjeta-destacada p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.tarjeta-destacada span {
+  color: #0ea82f;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.enlace-servicios {
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .grilla-destacados {
+    flex-direction: column;
+  }
+}
