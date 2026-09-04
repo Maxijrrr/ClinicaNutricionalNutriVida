@@ -281,8 +281,8 @@ tbody tr:hover {
 .bienvenida {
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.82),
-      rgba(255, 255, 255, 0.82)
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.35)
     ),
     url("../img/nutricionn.png");
 
@@ -316,7 +316,7 @@ tbody tr:hover {
 }
 
 .bienvenida-texto > p {
-  color: #4b5563;
+  color: #161718;
   font-size: 1.1rem;
   line-height: 1.7;
 }
