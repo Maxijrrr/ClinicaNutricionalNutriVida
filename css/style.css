@@ -274,3 +274,98 @@ tbody tr:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 /* Todo lo de arriba es parte de la seccion servicios */
+
+
+/* INICIO.HTML */
+
+.bienvenida {
+  background-color: #ffffff;
+  border: 1px solid #d1e7dd;
+  border-radius: 16px;
+  padding: 60px 50px;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.bienvenida-texto {
+  max-width: 700px;
+}
+
+.subtitulo {
+  color: #0ea82f;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.bienvenida h2 {
+  color: #1f2937;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+
+}
+
+.bienvenida-texto > p {
+  color: #4b5563;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.botones-inicio {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.boton-secundario {
+  background-color: #ffffff;
+  color: #0ea82f;
+  border: 1px solid #0ea82f;
+}
+
+.boton-secundario:hover {
+  background-color: #dcf2e3;
+}
+
+.sobre-nosotros {
+  margin-bottom: 48px;
+}
+
+.grilla-beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.tarjeta-beneficio {
+  background-color: #ffffff;
+  border: 1px solid #d1e7dd;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.tarjeta-beneficio h3 {
+  color: #0ea82f;
+  margin-bottom: 10px;
+}
+
+.tarjeta-beneficio p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .bienvenida {
+    padding: 35px 24px;
+  }
+
+  .bienvenida h2 {
+    font-size: 1.8rem;
+  }
+
+  .botones-inicio {
+    flex-direction: column;
+  }
+}
