@@ -535,3 +535,141 @@ tbody tr:hover {
     flex-direction: column;
   }
 }
+/* INFORMACIÓN DE LA CLÍNICA */
+
+.datos-clinica {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #ffffff;
+  border: 1px solid #d1e7dd;
+  border-radius: 16px;
+  padding: 36px;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.datos-clinica-texto {
+  flex: 1;
+}
+
+.datos-clinica-texto h2 {
+  color: #1f2937;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.datos-clinica-texto > p:last-child {
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.resumen-clinica {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.resumen-clinica article {
+  flex: 1 1 calc(50% - 16px);
+  min-width: 150px;
+  background-color: #dcf2e3;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.resumen-clinica strong {
+  display: block;
+  color: #0ea82f;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.resumen-clinica span {
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .datos-clinica {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px 22px;
+  }
+}
+/* FOOTER COMPLETO DEL INICIO */
+
+.footer-completo {
+  background-color: #ffffff;
+  border-top: 1px solid #d1e7dd;
+  padding: 36px 40px 18px;
+  text-align: left;
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-contenido section {
+  flex: 1;
+}
+
+.footer-contenido h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #0ea82f;
+  margin-bottom: 10px;
+}
+
+.footer-contenido h3 {
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.footer-contenido p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.footer-enlaces {
+  list-style: none;
+}
+
+.footer-enlaces li {
+  margin-bottom: 8px;
+}
+
+.footer-enlaces a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.footer-enlaces a:hover {
+  color: #0ea82f;
+}
+
+.footer-copy {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .footer-completo {
+    padding: 30px 22px 18px;
+  }
+
+  .footer-contenido {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
