@@ -33,10 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // =============================================================
-    // 1. HORARIOS DE ATENCIÓN POR NUTRICIONISTA
-    // =============================================================
+    //Horario atencion nutricionista//
     const horarios = {
         camila: ["09:00", "10:00", "11:00", "12:00"],
         mateo: ["14:00", "15:00", "16:00", "17:00"],
@@ -48,9 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const horaSelect = document.getElementById('hora');
     const formCita = document.getElementById('formCita');
 
-    // =============================================================
-    // 2. FILTRO DINÁMICO DE HORAS AL CAMBIAR DE NUTRICIONISTA
-    // =============================================================
+    //Filtro de horas segun nutricionista//
     if (nutricionistaSelect && horaSelect) {
         nutricionistaSelect.addEventListener('change', (e) => {
             const horasDisponibles = horarios[e.target.value];

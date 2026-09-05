@@ -78,3 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return bloques;
     }
 });
+const mensajeEstado = document.getElementById('mensajeEstado');
+
+// En lugar de alert():
+if (mensajeEstado) {
+    mensajeEstado.textContent = "¡Cita registrada con éxito!";
+    mensajeEstado.className = "mensaje-estado exito";
+
+    // Ocultar el mensaje automáticamente después de 4 segundos
+    setTimeout(() => {
+        mensajeEstado.style.display = 'none';
+    }, 4000);
+}
