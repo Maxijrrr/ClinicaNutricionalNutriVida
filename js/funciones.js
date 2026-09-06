@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fechaInput) {
         fechaInput.min = new Date().toISOString().split('T')[0];
     }
-    
+
     if (nutSelect && horaSelect) {
         nutSelect.addEventListener('change', () => {
             const nutElegido = nutSelect.value;
@@ -90,6 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (formCita && mensajeEstado) {
         formCita.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // VALIDACIÓN: No permitir horas pasadas si la cita es para hoy
+            const hoy = new Date().toISOString().split('T')[0];
+            const ahora = new Date();
+            const horaActual = `${String(ahora.getHours()).padStart(2, '0')}:${String(ahora.getMinutes()).padStart(2, '0')}`;
+
+            if (fechaInput && horaSelect && fechaInput.value === hoy && horaSelect.value <= horaActual) {
+                mensajeEstado.textContent = "No puedes agendar una hora que ya pasó. Por favor, selecciona un horario válido.";
+                mensajeEstado.className = "mensaje-estado error";
+                mensajeEstado.style.display = 'block';
+
+                setTimeout(() => {
+                    mensajeEstado.style.display = 'none';
+                }, 4000);
+                return;
+            }
 
             // Mostrar mensaje de confirmación
             mensajeEstado.textContent = "¡Solicitud registrada con éxito! Secretaría confirmará tu hora a la brevedad.";
