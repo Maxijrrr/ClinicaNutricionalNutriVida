@@ -33,8 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const horaSelect = document.getElementById('hora');
     const formCita = document.getElementById('formCita');
     const mensajeEstado = document.getElementById('mensajeEstado');
+    const fechaInput = document.getElementById('fecha');
 
     // --- FILTRADO DINÁMICO DE HORAS ---
+    if (fechaInput) {
+        fechaInput.min = new Date().toISOString().split('T')[0];
+    }
+    
     if (nutSelect && horaSelect) {
         nutSelect.addEventListener('change', () => {
             const nutElegido = nutSelect.value;
