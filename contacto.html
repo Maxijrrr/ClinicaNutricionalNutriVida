@@ -52,7 +52,8 @@
                     </div>
                     <div class="campo">
                         <label for="telefono">Teléfono / WhatsApp</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" pattern="^(\+?56)?\s?9\d{8}$"
+                         title="Ingresa un teléfono móvil válido (ej: +56 9 1234 5678 o 912345678)" required>
                     </div>
                 </div>
 
