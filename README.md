@@ -5,6 +5,12 @@
 El proyecto se encuentra publicado y accesible a través de GitHub Pages:  
 https://maxijrrr.github.io/ClinicaNutricionalNutriVida/
 
+Integrantes:
+
+Maximiliano Valenzuela
+Yoximar Ruíz
+Genesis Cerda
+
 ## Contexto de Negocio
 
 NutriVida es un centro de atención nutricional integral fundado en Temuco que atiende un promedio de 60 pacientes semanales mediante un equipo de 4 especialistas.
