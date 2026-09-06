@@ -24,3 +24,16 @@ Desarrollo de una plataforma web pública disponible de forma continua, que cent
 * **JavaScript (Vanilla):** Lógica del lado del cliente sin librerías externas para manipulación del DOM, cálculo dinámico de bloques de atención y validaciones de datos.
 * * **Git y GitHub:** Control de versiones colaborativo mediante commits semánticos y sincronización remota.
 
+## Estructura del Proyecto
+
+clinica-nutrivida/
+├── css/
+│   └── style.css            # Hoja de estilos centralizada y responsiva
+├── img/
+│   └── nutricionn.png       # Recursos gráficos e imágenes del sitio
+├── js/
+│   └── funciones.js        # Lógica de validaciones y dinamismo del DOM
+├── contacto.html           # Formulario de agendamiento 
+├── index.html              # Página principal e información institucional
+├── README.md               # Documentación técnica del proyecto
+└── servicios.html          # Directorio de profesionales y catálogo 
