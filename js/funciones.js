@@ -123,4 +123,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 4000);
         });
     }
+
+    // INICIALIZACIÓN DEL MAPA INTERACTIVO (Leaflet)
+    const contenedorMapa = document.getElementById('mapa');
+    if (contenedorMapa) {
+        // Coordenadas exactas: Av. Alemania 0281, Temuco
+        const latClinica = -38.7353;
+        const lonClinica = -72.6057;
+
+        // Crear mapa centrado con nivel de zoom 16
+        const mapa = L.map('mapa').setView([latClinica, lonClinica], 16);
+
+        // Capa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mapa);
+
+        // Marcador con popup informativo
+        L.marker([latClinica, lonClinica]).addTo(mapa)
+            .bindPopup('<strong>Clínica Nutricional NutriVida</strong><br>Av. Alemania 0450, Of. 302, Temuco<br>Región de La Araucanía')
+            .openPopup();
+    }
 });

@@ -6,6 +6,10 @@
     <title>Contacto y Citas | Clínica Nutricional NutriVida</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/funciones.js" defer></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -104,15 +108,21 @@
             </form>
         </section>
 
+        <section class="seccion-ubicacion">
+            <h2>Nuestra Ubicación</h2>
+            <p>Visítanos en nuestra sede central en Temuco.</p>
+            <div id="mapa"></div>
+        </section>
+
         <!-- Informacion de la clinica -->
         <section class="seccion-info">
-            <h2>Nuestra Ubicación</h2>
+            <h2>Información De Contacto</h2>
             <p>Atendemos de forma presencial en Temuco y online para todo Chile.</p>
 
             <div class="info-cajas">
                 <article class="caja-info">
                     <h3>Dirección</h3>
-                    <p>Av. Alemania 0281, Temuco, Región de La Araucanía</p>
+                    <p>Av. Alemania 0450, Of. 302 - Temuco, Región de La Araucanía</p>
                 </article>
 
                 <article class="caja-info">
@@ -123,8 +133,8 @@
 
                 <article class="caja-info">
                     <h3>Contacto Directo</h3>
-                    <p>Teléfono: +56 45 220 0000</p>
-                    <p>WhatsApp: +56 9 8765 4321</p>
+                    <p>Teléfono: +56 45 234 5678</p>
+                    <p>WhatsApp: +56 9 4567 8901</p>
                 </article>
             </div>
         </section>
