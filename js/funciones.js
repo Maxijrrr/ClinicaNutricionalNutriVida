@@ -1,3 +1,4 @@
+// --- GESTIÓN DE PESTAÑAS (SERVICIOS) ---
 function cambiarCategoria(categoria) {
     // 1. Ocultar todos los paneles
     const paneles = document.querySelectorAll('.panel-categoria');
@@ -13,27 +14,30 @@ function cambiarCategoria(categoria) {
         panelSeleccionado.classList.add('activo');
     }
 
-    // 4. Activar el botón correspondiente
-    event.currentTarget.classList.add('activo');
+    // 4. Activar el botón presionado
+    if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('activo');
+    }
 }
 
-// Horarios oficiales según el nutricionista
+// Horarios oficiales según la jornada de cada especialista
 const horariosNutricionistas = {
-    carolina: { inicio: "09:00", fin: "17:00" }, // 09:00 a 17:00
-    rodrigo:  { inicio: "09:00", fin: "14:00" }, // 09:00 a 14:00
-    daniela:  { inicio: "08:00", fin: "13:00" }, // 08:00 a 13:00
-    felipe:   { inicio: "14:00", fin: "19:00" }  // 14:00 a 19:00
+    carolina: { inicio: "09:00", fin: "17:00" },
+    rodrigo:  { inicio: "09:00", fin: "14:00" },
+    daniela:  { inicio: "08:00", fin: "13:00" },
+    felipe:   { inicio: "14:00", fin: "19:00" }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     const nutSelect = document.getElementById('nutricionista');
     const horaSelect = document.getElementById('hora');
+    const formCita = document.getElementById('formCita');
+    const mensajeEstado = document.getElementById('mensajeEstado');
 
+    // --- FILTRADO DINÁMICO DE HORAS ---
     if (nutSelect && horaSelect) {
         nutSelect.addEventListener('change', () => {
             const nutElegido = nutSelect.value;
-            
-            // Limpiar opciones previas
             horaSelect.innerHTML = '';
 
             if (!nutElegido || !horariosNutricionistas[nutElegido]) {
@@ -42,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Cargar únicamente las horas de atención de ese nutricionista
             const { inicio, fin } = horariosNutricionistas[nutElegido];
             const bloques = generarBloquesHorarios(inicio, fin);
 
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Generador de intervalos de 30 minutos entre la hora de inicio y fin
+    // Generador de intervalos de 30 minutos
     function generarBloquesHorarios(inicio, fin) {
         const bloques = [];
         let [hora, min] = inicio.split(':').map(Number);
@@ -77,16 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return bloques;
     }
+
+    // --- MANEJO DEL ENVÍO DEL FORMULARIO ---
+    if (formCita && mensajeEstado) {
+        formCita.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Mostrar mensaje de confirmación
+            mensajeEstado.textContent = "¡Solicitud registrada con éxito! Secretaría confirmará tu hora a la brevedad.";
+            mensajeEstado.className = "mensaje-estado exito";
+            mensajeEstado.style.display = 'block';
+
+            // Limpiar formulario y resetear selector de horas
+            formCita.reset();
+            horaSelect.disabled = true;
+            horaSelect.innerHTML = '<option value="" disabled selected>-- Primero selecciona un nutricionista --</option>';
+
+            // Ocultar mensaje tras 4 segundos
+            setTimeout(() => {
+                mensajeEstado.style.display = 'none';
+            }, 4000);
+        });
+    }
 });
-const mensajeEstado = document.getElementById('mensajeEstado');
-
-// En lugar de alert():
-if (mensajeEstado) {
-    mensajeEstado.textContent = "¡Cita registrada con éxito!";
-    mensajeEstado.className = "mensaje-estado exito";
-
-    // Ocultar el mensaje automáticamente después de 4 segundos
-    setTimeout(() => {
-        mensajeEstado.style.display = 'none';
-    }, 4000);
-}
